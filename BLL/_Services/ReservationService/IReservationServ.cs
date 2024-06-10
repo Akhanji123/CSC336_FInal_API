@@ -1,5 +1,6 @@
 ﻿using BLL._Services._GenericService;
 using BLL.DataTransferObjects;
+using BLL.Wrapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace BLL._Services.ReservationService
     using TypeOfDTO = ReservationDTO;
     public interface IReservationServ : IGenericServ<TypeOfDTO>
     {
+        public Task<ApiResponse<AddResWithPassAndFlight>> AddingResWithPassAndFlight(AddResWithPassAndFlight ResWithPassAndFlightDTO);
     }
 }

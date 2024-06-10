@@ -19,8 +19,6 @@ namespace BLL.DataTransferObjects
 
         public DateTime? ReservationDate { get; set; }
 
-        public virtual Flight? Flight { get; set; }
 
-        public virtual Passenger? Passenger { get; set; }
     }
 }

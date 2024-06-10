@@ -1,4 +1,6 @@
+using BLL.Wrapping.Exceptions;
 using CSC336_FInal.Extenstions;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +24,15 @@ builder.Services.AddDB(builder.Configuration);
 builder.Services.AddRepositories();
 //Service D
 builder.Services.AddServices();
+//Exceptions
+builder.Services.AddExeptionService();
+builder.Services.AddSingleton<IExceptionHandler, GlobalExceptionHandler>();
+
+//Logger
+builder.Services.AddLogging(logging =>
+{
+    // Configure logging options here
+});
 
 
 builder.Services.AddControllers();
@@ -37,6 +48,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 

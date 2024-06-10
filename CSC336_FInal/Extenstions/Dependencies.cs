@@ -8,6 +8,7 @@ using BLL._Services.FlightService;
 using BLL._Services.PassengerService;
 using BLL._Services.PilotService;
 using BLL._Services.ReservationService;
+using BLL.Wrapping.Exceptions;
 
 namespace CSC336_FInal.Extenstions
 {
@@ -30,6 +31,13 @@ namespace CSC336_FInal.Extenstions
             services.AddScoped<IPassengerServ, PassengerServ>();
             services.AddScoped<IPilotServ, PilotServ>();
             services.AddScoped<IReservationServ, ReservationServ>();
+            return services;
+        }
+
+        public static IServiceCollection AddExeptionService(this IServiceCollection services)
+        {
+            services.AddExceptionHandler<GlobalExceptionHandler>();
+            services.AddProblemDetails();
             return services;
         }
     }

@@ -25,9 +25,7 @@ namespace BLL.DataTransferObjects
 
         public int? PilotId { get; set; }
 
-        public virtual Airplane? Airplane { get; set; }
 
-        public virtual Pilot? Pilot { get; set; }
     }
 }
 
