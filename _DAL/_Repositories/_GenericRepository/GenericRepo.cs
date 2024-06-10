@@ -13,9 +13,9 @@ namespace _DAL._Repositories._GenericRepository
         protected readonly DbSet<T> _dbSet;
         protected readonly AirplaneSystemContext _context;
 
-        public GenericRepo(DbSet<T> dbSet, AirplaneSystemContext context)
+        public GenericRepo( AirplaneSystemContext context)
         {
-            _dbSet = dbSet;
+            _dbSet = context.Set<T>() ;
             _context = context;
         }
 
