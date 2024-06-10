@@ -21,8 +21,7 @@ namespace BLL.Wrapping.Exceptions
 
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
-            if (exception is NotImplementedException)
-            {
+            
                 _logger.LogError(exception, "An unexpected error occurred");
                 await httpContext.Response.WriteAsJsonAsync(new ErrorClass
                 {
@@ -32,8 +31,7 @@ namespace BLL.Wrapping.Exceptions
                 });
                 return true;
 
-            }
-            return false;
+            
         }
 
 

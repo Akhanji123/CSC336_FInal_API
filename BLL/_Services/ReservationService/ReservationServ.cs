@@ -41,11 +41,11 @@ namespace BLL._Services.ReservationService
                 {
                     var passengerResult =await  _passengerRepo.AddElement(_mapper.Map<Passenger>(ResWithPassAndFlightDTO.passengerDTO));
                     var FlightResult = await _flightRepo.AddElement(_mapper.Map<Flight>(ResWithPassAndFlightDTO.flightDTO));
-                    ResWithPassAndFlightDTO.reservationDTO.PassengerId = passengerResult.PassengerId;
-                    ResWithPassAndFlightDTO.reservationDTO.FlightId = FlightResult.FlightId;
-                    var reservationResult = _reservationRepo.AddElement(_mapper.Map<Reservation>(ResWithPassAndFlightDTO.reservationDTO));
 
-
+                    ResWithPassAndFlightDTO.PassengerId = passengerResult.PassengerId;
+                    ResWithPassAndFlightDTO.FlightId = FlightResult.FlightId;
+               
+                   var reservationResult = await _reservationRepo.AddElement(_mapper.Map<Type>(ResWithPassAndFlightDTO));
                     transaction.Complete();
                     response.Data = ResWithPassAndFlightDTO;
                     return response;
