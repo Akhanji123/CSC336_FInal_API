@@ -18,7 +18,10 @@ builder.Services.AddCors(options =>
 builder.Services.AutoMappingConfig();
 //DBContext
 builder.Services.AddDB(builder.Configuration);
-
+//Repository D
+builder.Services.AddRepositories();
+//Service D
+builder.Services.AddServices();
 
 
 builder.Services.AddControllers();
