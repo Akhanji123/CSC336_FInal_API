@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace _DAL._Repositories.PassengerRepository
 {
     using Type = Passenger;
-    public class PassengerRepo : GenericRepo<Type>
+    public class PassengerRepo : GenericRepo<Type> , IPassengerRepo
     {
         public PassengerRepo(AirplaneSystemContext context) : base(context)
         {

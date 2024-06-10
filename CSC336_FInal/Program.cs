@@ -1,4 +1,5 @@
 using CSC336_FInal.Extenstions;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,8 @@ builder.Services.AddCors(options =>
 
 //Mapping
 builder.Services.AutoMappingConfig();
-
+//DBContext
+builder.Services.AddDB(builder.Configuration);
 
 
 

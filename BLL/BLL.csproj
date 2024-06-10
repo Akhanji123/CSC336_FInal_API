@@ -18,12 +18,4 @@
     <ProjectReference Include="..\_DAL\_DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="_Services\AirplaneService\" />
-    <Folder Include="_Services\FlightService\" />
-    <Folder Include="_Services\ReservationService\" />
-    <Folder Include="_Services\PassengerService\" />
-    <Folder Include="_Services\PilotService\" />
-  </ItemGroup>
-
 </Project>
